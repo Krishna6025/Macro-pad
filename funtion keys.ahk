@@ -3,39 +3,39 @@
 	SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 	SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
-	; Note the following hotkey prefixes (^ Ctrl) (! Alt) (+ Shift)
+	;(^ Ctrl) (! Alt) (+ Shift)
 	; HID Remapper from https://www.jfedor.org/hid-remapper-config/
 
 	; Set your Home Assistant API key and base URL
-	HomeAssistantAPIKey := "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiIzOTI2ZWI5NmY2NjM0ODQxYjljZWM5ZWY1MTRlYjcxOSIsImlhdCI6MTcyMzgyNDgzNCwiZXhwIjoyMDM5MTg0ODM0fQ.c6PH3CxsasAMo7yiYb1jvmfUQq0GjipLohKeMEI8R6Y"
-	HomeAssistantBaseURL := "http://192.168.0.221:8123/api/services"
+	HomeAssistantAPIKey := "API key"
+	HomeAssistantBaseURL := "Hme assistant URL"
 
 	; ############# Quick Launchers #############
 
-	; No action assigned for F13
+	; No action yet
 	F13::return
 
 	; Move window left with F14
 	F14::
-		Send, #{Left} ; Simulate Windows + Left Arrow
+		Send, #{Left} 
 		
 	return
 
 
 
-	; No action assigned for F15
+	; window full with F15
 	F15::
-	 Send, #{Up} ; Simulate Windows + Right Arrow`
+	 Send, #{Up} ;  
 	 
 	return
 
 	; Move window right with F16
 	F16::
-		 Send, #{Right} ; Simulate Windows + Right Arrow
+		 Send, #{Right} ; 
 		 
 	return
 
-	; No action assigned for F17
+	; AFK shortcut for GTA online
 	F17::
 	ToggleF17 := !ToggleF17 ; Toggle the state
 
@@ -52,7 +52,7 @@ PressD:
         Send, {d up} ; Release the letter D
 return
 
-	; No action assigned for F18
+	; No action yet
 	F18::return
 
 	; Close all open application windows with F20
@@ -66,29 +66,31 @@ return
 		}
 	return
 
-	; Open tab 1 and specific tabs with F21
+	; Study mode with F21
 	F21::
 		Send, #1 ; Open Chrome
-		Sleep 500
+		Sleep 696
 		Run, "C:\Program Files\Google\Chrome\Application\chrome.exe" --new-tab "https://swayam.gov.in/"
-		Sleep 500
+		Sleep 696
 		Run, "C:\Program Files\Google\Chrome\Application\chrome.exe" --new-tab "https://calendar.google.com/calendar/u/0/r/tasks"
 	return
 
-	; Open games folder and Discord with F22
+	; Game mode with F22
 	F22::
 		Run, explorer.exe "C:\Users\saikr\OneDrive\Desktop\games" ; 
-		Sleep 500
+		Sleep 696
 		Run, "C:\Users\saikr\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Discord Inc\Discord.lnk" ; 
 	return
 
-	; No action assigned for F23
+	;No action yet
 	F23::return
 
-	; No action assigned for F24
+	; No action yet
 	F24::return
 
 	; ####### Home Automation with Home Assistant #######
+
+	; work in progress to get it to work perfectly
 
 	; Control tube light (Home Assistant) 
 	!+F23::
